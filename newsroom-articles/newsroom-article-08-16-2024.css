@@ -1,0 +1,248 @@
+/* General Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../newsroom-assets/newsroom-image-08-16-2024.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: black;
+    color: #ffffff;
+}
+
+.logo img {
+    max-width: 250px;
+    filter: invert(1);
+    display: block;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    background-color: #333333;
+    border-radius: 4px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2c2c2c;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    overflow: hidden;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #555555;
+    padding-left: 24px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Title Box with Animation */
+.title-box {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* More opaque background */
+    padding: 30px;
+    max-width: 80%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0; /* Square corners */
+    opacity: 0; /* Initially invisible */
+    transform: translateX(-50px); /* Start position for the slide-in effect */
+    animation: fadeInLeft 1.5s ease-out forwards; /* Apply animation */
+}
+
+.title-box h1 {
+    font-size: 2.5rem; /* Larger text */
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Main Content */
+main {
+    margin-top: 100vh; /* Start below the fold */
+    background-color: #ffffff;
+    color: #333333;
+    padding: 40px 20px;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* Article Content */
+.article-header {
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.meta-lines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meta-line {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.article-header .meta {
+    font-size: 1rem; /* Adjust font size for meta */
+    color: #333333;
+    margin: 0;
+}
+
+article {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #333333;
+}
+
+article p {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 50px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 0.8rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Scrolling Effect */
+body::before {
+    content: "";
+    display: block;
+    height: 100vh; /* Full height of the viewport */
+}
+
+main {
+    animation: scrollUp 1s ease-out forwards;
+}
+
+@keyframes scrollUp {
+    to {
+        margin-top: 60px; /* Adjust to match header height */
+    }
+}
+
+/* Fade-in Left Animation */
+@keyframes fadeInLeft {
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateX(0); /* End position */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title-box h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .article-header h1 {
+        font-size: 2rem;
+    }
+}
+/* Video Container */
+.video-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: none;
+}

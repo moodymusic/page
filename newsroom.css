@@ -1,0 +1,372 @@
+/* General Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('newsroom-assets/newsroom-image-08-15-2024.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: black;
+    color: #ffffff;
+}
+
+.logo img {
+    max-width: 250px;
+    filter: invert(1);
+    display: block;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    background-color: #333333;
+    border-radius: 4px;
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 10px); /* Keeps the dropdown hanging a bit lower */
+    left: 0;
+    background-color: #1f1f1f; /* Darker background for a sleek look */
+    min-width: 250px; /* Slightly wider for better spacing */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6); /* Enhance shadow for depth */
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px 0; /* Uniform padding inside the dropdown */
+    transform: translateY(-10px); /* Subtle upward shift for animation */
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0); /* Slide down */
+}
+
+.dropdown-content li {
+    list-style: none;
+    border-bottom: 1px solid #444444; /* Lighter border for separation */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.dropdown-content li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a {
+    color: #e2e2e2; /* Softer white for text */
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #333333; /* Darker hover background */
+    padding-left: 24px;
+    color: #ffffff; /* Brighten text color on hover */
+}
+
+.dropdown-content a::before {
+    content: '→'; /* Add an arrow icon before each link */
+    padding-right: 10px;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-10px);
+}
+
+.dropdown-content a:hover::before {
+    opacity: 1;
+    transform: translateX(0); /* Slide in the arrow on hover */
+}
+
+/* Keyframes for fadeInLeft */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Featured article box with simplified styles */
+.featured-article-box {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    max-width: 80%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    z-index: 1001;
+    animation: fadeInLeft 1.5s ease-out forwards;
+}
+
+.featured-article-box h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.read-more-btn {
+    font-size: 1rem;
+    padding: 7px 14px;
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 2px solid #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    align-self: flex-start;
+}
+
+.read-more-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Main Content */
+main {
+    margin-top: 100vh;
+    background-color: #ffffff;
+    color: #ffffff;
+    padding: 40px 20px;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    animation: scrollUp 1s ease-out forwards;
+}
+main {
+    animation: scrollUp 0s ease-out forwards;
+}
+.more-news-content-label h2 {
+    font-size: 1.3rem;
+    color: #000000;
+    text-align: left;
+    border-bottom: 1px solid #ff8800;
+    margin-bottom: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 10px;
+}
+
+/* More News Content */
+.more-news-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px 50px;
+}
+
+.article-item {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 1px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.article-item:hover {
+    transform: scale(1.05);
+}
+
+.article-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.article-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1200px) {
+    .more-news-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .more-news-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .more-news-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .more-news-content {
+        grid-template-columns: 1fr;
+    }
+}
+/* Latest Releases Section */
+.latest-releases-section {
+    margin-top: 40px;
+    padding: 20px 50px;
+    background-color: #000000d3; /* Semi-transparent black background */
+    border-radius: 1px;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.latest-releases-section h2 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-align: left;
+    border-bottom: 1px solid #ff8800;
+    margin-bottom: 20px;
+}
+
+.latest-releases-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+    gap: 20px; /* Space between items */
+}
+
+.release-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.release-item iframe {
+    width: 100%; /* Full width of the grid item */
+    border-radius: 12px; /* Rounded corners */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1200px) {
+    .latest-releases-content {
+        grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    }
+}
+
+@media (max-width: 992px) {
+    .latest-releases-content {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .latest-releases-content {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    }
+}
+
+@media (max-width: 576px) {
+    .latest-releases-content {
+        grid-template-columns: 1fr; /* 1 item per row */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 50px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 0.8rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Separator Line */
+hr {
+    border: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    margin: 40px 0;
+}
+
+/* Scrolling Effect */
+body::before {
+    content: "";
+    display: block;
+    height: 100vh;
+}
+
+@keyframes scrollUp {
+    to {
+        margin-top: 60px;
+    }
+}

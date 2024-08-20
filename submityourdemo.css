@@ -1,0 +1,83 @@
+/* Import the main CSS file but override specific styles */
+@import url('style.css'); 
+
+/* Remove any previously applied transform or animation from the main CSS */
+.demo {
+    padding: 60px 50px;
+    color: #ffffff;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0; /* Start with invisible content */
+    animation: none; /* Remove any animation inherited from the main CSS */
+    animation: fadeInDown 2.0s ease-in-out forwards; /* Apply the downward fade-in animation */
+    transform: none; /* Reset any inherited transform property */
+}
+
+/* Animation for fading in from top to bottom */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px); /* Start content 50px above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move content to its original position */
+    }
+}
+
+.demo h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.demo p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Style for Submit Demo Now Button */
+.submit-demo-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000; /* Text color */
+    background-color: #ffffff; /* Button background color */
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added transition for color */
+}
+
+.submit-demo-btn:hover {
+    background-color: #000000; /* Darker background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 50px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,286 @@
+/* Apply background image to the home page */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('assets/sm7b.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff; /* White text for readability */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: black;
+    color: #ffffff;
+}
+
+.logo img {
+    max-width: 250px;
+    filter: invert(1);
+    display: block;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    background-color: #333333;
+    border-radius: 4px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 10px); /* Keeps the dropdown hanging a bit lower */
+    left: 0;
+    background-color: #1f1f1f; /* Darker background for a sleek look */
+    min-width: 250px; /* Slightly wider for better spacing */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6); /* Enhance shadow for depth */
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px 0; /* Uniform padding inside the dropdown */
+    transform: translateY(-10px); /* Subtle upward shift for animation */
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0); /* Slide down */
+}
+
+.dropdown-content li {
+    list-style: none;
+    border-bottom: 1px solid #444444; /* Lighter border for separation */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.dropdown-content li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a {
+    color: #e2e2e2; /* Softer white for text */
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #333333; /* Darker hover background */
+    padding-left: 24px;
+    color: #ffffff; /* Brighten text color on hover */
+}
+
+.dropdown-content a::before {
+    content: '→'; /* Add an arrow icon before each link */
+    padding-right: 10px;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-10px);
+}
+
+.dropdown-content a:hover::before {
+    opacity: 1;
+    transform: translateX(0); /* Slide in the arrow on hover */
+}
+
+/* Main content */
+main {
+    padding: 50px 50px;
+    color: #ffffff;
+    max-width: 1200px; /* Increase the width to fit the new layout */
+    margin: 0 auto;
+    flex: 1;
+    margin-top: 100px;
+    text-align: left; /* Align text to the left */
+}
+
+/* Intro Section */
+.intro {
+    max-width: 80%; /* Restrict the width of the text block */
+    margin-left: 0%; /* Center it with a margin from the left */
+    padding: 50px 0; /* Add spacing for visual separation */
+}
+
+.intro h1 {
+    font-size: 4rem; /* Decrease font size */
+    font-weight: 900; /* Keep the font bold */
+    margin-bottom: 20px;
+    line-height: 1.1; /* Adjust line-height for a more compact look */
+}
+
+.intro p {
+    font-size: 1.2rem; /* Decrease paragraph font size */
+    line-height: 1.4; /* Adjust line height for readability */
+    margin-bottom: 20px; /* Decrease spacing below paragraph */
+}
+
+.achievements {
+    display: flex;
+    flex-direction: column; /* Stack the achievements vertically */
+    align-items: flex-start; /* Align to the left */
+    margin-top: 20px; /* Decrease space above achievements */
+    gap: 8px; /* Add space between achievements */
+}
+
+.achievements p {
+    font-size: 1.3rem; /* Decrease font size */
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.achievements p strong {
+    font-weight: 700; /* Bolder text for emphasis */
+}
+
+/* What Makes Us Different Section */
+.what-makes-us-different {
+    padding: 40px 0; /* Add padding around the section */
+    margin-bottom: 40px; /* Space below the section */
+}
+
+.what-makes-us-different h2 {
+    font-size: 2rem; /* Section title font size */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.what-makes-us-different p {
+    font-size: 1.1rem; /* Paragraph font size */
+    line-height: 1.5;
+}
+
+/* Our Partnership Section */
+.our-partnership {
+    padding: 40px 0; /* Add padding around the section */
+    margin-bottom: 40px; /* Space below the section */
+}
+
+.our-partnership h2 {
+    font-size: 2rem; /* Section title font size */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.our-partnership p {
+    font-size: 1.1rem; /* Paragraph font size */
+    line-height: 1.5;
+}
+
+/* Latest Releases Section */
+.latest-releases {
+    padding: 40px 0; /* Adjust padding around the section */
+    margin-bottom: 40px; /* Adjust space below the section */
+}
+
+.latest-releases h2 {
+    font-size: 2rem; /* Decrease font size */
+    font-weight: 700; /* Bold title */
+    margin-bottom: 20px; /* Adjust space below the title */
+    text-align: center; /* Center align the section title */
+}
+
+.release {
+    margin-bottom: 40px; /* Adjust space between releases */
+}
+
+.release h3 {
+    font-size: 1rem; /* Decrease size for release titles */
+    font-weight: 600; /* Bold release titles */
+    margin-bottom: 8px; /* Adjust space below release title */
+}
+
+/* Footer */
+footer {
+    background-color: black; /* Black footer to match the header */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 50px;
+    margin-top: auto; /* Push the footer to the bottom */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.8rem; /* Decrease footer text size */
+}
+
+footer a {
+    color: #ffffff; /* White text for readability */
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 0.8rem; /* Decrease footer link text size */
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Add left-to-right fade-in animation to the main content */
+@keyframes fadeInLeftToRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* Start slightly to the left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* End at the original position */
+    }
+}
+
+main {
+    animation: fadeInLeftToRight 2.0s ease-in-out;
+    opacity: 0; /* Ensure the element is hidden before the animation */
+    animation-fill-mode: forwards; /* Keep the final state after the animation */
+}
+
+/* Separator Line */
+hr {
+    border: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.2); /* Light separator line */
+    margin: 40px 0; /* Space around the separator */
+}

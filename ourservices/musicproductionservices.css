@@ -1,0 +1,14 @@
+@import url('../style.css');
+
+/* Custom styles for the Music Production Services page */
+.production h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Custom text shadow */
+}
+
+.production p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Custom paragraph style */
+}
